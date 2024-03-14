@@ -1,0 +1,672 @@
+Program.Sub.ScreenSU.Start
+Gui.F_VendorUF..Create
+Gui.F_VendorUF..Caption("Vendor Extra Fields")
+Gui.F_VendorUF..Size(15360,8130)
+Gui.F_VendorUF..MinX(0)
+Gui.F_VendorUF..MinY(0)
+Gui.F_VendorUF..Position(0,0)
+Gui.F_VendorUF..BackColor(-2147483633)
+Gui.F_VendorUF..MousePointer(0)
+Gui.F_VendorUF..Event(UnLoad,F_VendorUF_UnLoad)
+Gui.F_VendorUF.txtVendorID.Create(TextBox,"",True,4515,300,0,1470,150,False,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.lbl1.Create(Label,"Vendor ID:",True,1290,255,0,90,240,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.GsGcVendorUF1.Create(GsGridControl)
+Gui.F_VendorUF.GsGcVendorUF1.Size(8280,2985)
+Gui.F_VendorUF.GsGcVendorUF1.Position(6720,390)
+Gui.F_VendorUF.GsGcVendorUF1.Anchor(15)
+Gui.F_VendorUF.GsGcVendorUF1.Event(RowCellClick,GsGcVendorUF1_RowCellClick)
+Gui.F_VendorUF.cmdBrowse.Create(Button)
+Gui.F_VendorUF.cmdBrowse.Size(420,375)
+Gui.F_VendorUF.cmdBrowse.Position(6060,105)
+Gui.F_VendorUF.cmdBrowse.Caption("^")
+Gui.F_VendorUF.cmdBrowse.Event(Click,cmdBrowse_Click)
+Gui.F_VendorUF.cmdSave.Create(Button)
+Gui.F_VendorUF.cmdSave.Size(855,375)
+Gui.F_VendorUF.cmdSave.Position(14115,6840)
+Gui.F_VendorUF.cmdSave.Anchor(10)
+Gui.F_VendorUF.cmdSave.Caption("Save")
+Gui.F_VendorUF.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_VendorUF.lbl2.Create(Label,"Buy From Address",True,1935,255,0,90,705,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.txtName.Create(TextBox,"",True,4500,300,0,1470,945,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.lbl3.Create(Label,"Name",True,900,255,0,90,1020,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl4.Create(Label,"Address 1",True,975,255,0,90,1335,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl5.Create(Label,"Address 2",True,1080,255,0,90,1650,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl6.Create(Label,"Address 3",True,1050,255,0,90,1965,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl7.Create(Label,"Address 4",True,975,255,0,90,2295,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl8.Create(Label,"Address 5",True,1020,255,0,90,2595,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl9.Create(Label,"City",True,840,255,0,90,2925,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl10.Create(Label,"State",True,1065,255,0,90,3225,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl11.Create(Label,"Zip",True,750,255,0,90,3540,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl12.Create(Label,"Country",True,780,255,0,90,3870,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl13.Create(Label,"County",True,795,255,0,90,4170,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl14.Create(Label,"Attention",True,885,255,0,90,4485,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl15.Create(Label,"Telephone",True,930,255,0,90,5070,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl16.Create(Label,"Fax",True,840,255,0,90,5400,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.txtAddress1.Create(TextBox,"",True,4500,300,0,1470,1260,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtAddress2.Create(TextBox,"",True,4500,300,0,1470,1575,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtAddress4.Create(TextBox,"",True,4500,300,0,1470,2205,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtAddress5.Create(TextBox,"",True,4500,300,0,1470,2520,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtCity.Create(TextBox,"",True,4500,300,0,1470,2835,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtState.Create(TextBox,"",True,4500,300,0,1470,3150,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtZip.Create(TextBox,"",True,4500,300,0,1470,3465,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtCountry.Create(TextBox,"",True,4500,300,0,1470,3780,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtCounty.Create(TextBox,"",True,4500,300,0,1470,4095,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtAttention.Create(TextBox,"",True,4500,300,0,1470,4410,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtTelCountry.Create(TextBox,"",True,720,300,0,1455,4995,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtTelAreaCd.Create(TextBox,"",True,720,300,0,2595,4995,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtTelNum1.Create(TextBox,"",True,720,300,0,4020,4995,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtTelNum2.Create(TextBox,"",True,720,300,0,5235,4995,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.lbl17.Create(Label,"Country",True,720,255,0,1440,4800,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl18.Create(Label,"Area Cd",True,720,255,0,2580,4800,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl19.Create(Label,"Number",True,720,255,0,4005,4785,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.txtAddress3.Create(TextBox,"",True,4500,300,0,1470,1890,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtFaxNum2.Create(TextBox,"",True,720,300,0,5235,5310,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtFaxNum1.Create(TextBox,"",True,720,300,0,4020,5310,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtFaxAreaCd.Create(TextBox,"",True,720,300,0,2595,5310,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.txtFaxCountry.Create(TextBox,"",True,720,300,0,1455,5310,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.GsGcVendorUF2.Create(GsGridControl)
+Gui.F_VendorUF.GsGcVendorUF2.Size(8280,2820)
+Gui.F_VendorUF.GsGcVendorUF2.Position(6720,3825)
+Gui.F_VendorUF.GsGcVendorUF2.Anchor(15)
+Gui.F_VendorUF.lbl20.Create(Label,"Drop Down User Fields",True,3000,255,0,6720,165,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl22.Create(Label,"Manual Entry User Fields",True,3000,255,0,6735,3570,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl22.Anchor(10)
+Gui.F_VendorUF.lbl21.Create(Label,"ISO Status",True,930,255,0,90,6090,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl23.Create(Label,"ISO Date (mm/dd/yy)",True,1140,510,0,90,6360,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl24.Create(Label,"Buyer",True,720,255,0,3345,6090,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.lbl25.Create(Label,"Ship Via",True,765,255,0,3345,6420,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.ddlISOStatus.Create(DropDownList)
+Gui.F_VendorUF.ddlISOStatus.Size(1515,330)
+Gui.F_VendorUF.ddlISOStatus.Position(1455,5955)
+Gui.F_VendorUF.ddlISOStatus.Event(Change,ddlISOStatus_Change)
+Gui.F_VendorUF.ddlISOStatus.Event(LostFocus,ddlISOStatus_LostFocus)
+Gui.F_VendorUF.ddlBuyer.Create(DropDownList)
+Gui.F_VendorUF.ddlBuyer.Size(1800,330)
+Gui.F_VendorUF.ddlBuyer.Position(4140,5970)
+Gui.F_VendorUF.ddlShipVia.Create(DropDownList)
+Gui.F_VendorUF.ddlShipVia.Size(1800,330)
+Gui.F_VendorUF.ddlShipVia.Position(4140,6330)
+Gui.F_VendorUF.txtISODate.Create(TextBox,"",True,1515,300,0,1455,6315,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.lbl26.Create(Label,"External ID",True,1140,510,0,75,6825,True,0,"Arial",8,-2147483633,0)
+Gui.F_VendorUF.txtExternalID.Create(TextBox,"",True,1515,300,0,1455,6765,True,0,"Arial",8,-2147483643,1)
+Gui.F_VendorUF.chkCriticalSupplier.Create(CheckBox)
+Gui.F_VendorUF.chkCriticalSupplier.Size(1800,360)
+Gui.F_VendorUF.chkCriticalSupplier.Position(4140,6780)
+Gui.F_VendorUF.chkCriticalSupplier.Caption("Critical Supplier")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'	Author: Daniel Duncan
+'	Customer: EMC
+'	Program Name: Vendor Extra Fields
+'	Date Started: 8/27/2019
+'	Description: This project allows the user to quickly edit vendor master data as well as CRM user fields for the selected vendor.  The intended audience is someone who needs to be able to edit only a subset of vendor data but not all of the fields, both in Vendor Master and in CRM.
+'	Ticket: ELE010-82320190839-8
+'	GAP: 5646
+	f.Intrinsic.Control.Try	
+		v.Local.sIcon.Declare
+		
+		F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+		gui.F_VendorUF..Icon(V.Local.sIcon)
+		f.Intrinsic.Control.CallSub(GetUserFields)
+		f.Intrinsic.Control.CallSub(GetDropdownValues)
+		gui.F_VendorUF..Show
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+'--------FORM EVENTS----------
+Program.Sub.F_VendorUF_UnLoad.Start
+	f.Intrinsic.Control.End
+Program.Sub.F_VendorUF_UnLoad.End
+
+Program.Sub.cmdBrowse_Click.Start
+	f.Intrinsic.Control.Try
+		v.Local.sRet.Declare
+		V.Local.sCol.Declare
+		
+		F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+		
+		f.Intrinsic.UI.Browser(300,"",v.Local.sRet)
+		
+		f.Intrinsic.Control.If(v.Local.sRet,!=,"***CANCEL***")
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sCol)
+			'Vendor ID is column 0
+			gui.F_VendorUF.txtVendorID.Text(v.Local.sCol(0))
+			f.Intrinsic.Control.CallSub(GetVendorData,VendorNo,v.Local.sCol(0))
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.cmdSave_Click.Start
+	f.Intrinsic.Control.Try
+		v.Local.sSQL.Declare(string)
+		v.Local.sRet.Declare(string)
+		V.Local.iCnt.Declare(long,0)
+		V.Local.sVendor.Declare(String)
+		v.Local.sBuyerCode.Declare(string,"  ")
+		v.Local.sShipViaCode.Declare(string)
+		v.Local.sISOStatusCode.Declare(string)
+		v.Local.sISODateYear.Declare(string)
+		v.Local.sISODateMonthDay.Declare(string)
+		v.Local.sISODatePlaceHolder.Declare(string)
+		v.Local.sFilter.Declare(string)
+		V.Local.sVendorCritical.Declare
+		V.Local.sVendor.Set(v.Screen.F_VendorUF!txtVendorID.text)
+		
+		'Get the buyer code
+		f.Intrinsic.String.Build("BUYER like '{0}%'",v.Screen.F_VendorUF!ddlBuyer.text,V.Local.sFilter)
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtBuyer.RowCount--,1)
+			f.Intrinsic.Control.If(v.DataTable.dtBuyer(v.local.iCnt).BUYER!FieldValtrim,=,v.Screen.F_VendorUF!ddlBuyer.text)
+				v.Local.sBuyerCode.Set(v.DataTable.dtBuyer(v.Local.iCnt).Buyer_Code!FieldValTrim)
+				f.Intrinsic.Control.ExitFor(v.Local.iCnt)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+'		F.Data.DataTable.Select("dtBuyer",V.Local.sFilter,V.Local.sRet)
+'		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sBuyerCode)
+'		f.Intrinsic.String.LPad(v.Local.sBuyerCode(0)," ",2,v.Local.sBuyerCode(0))
+		'f.Intrinsic.String.LPad(v.Local.sBuyerCode," ",2,v.Local.sBuyerCode
+		
+		v.Local.iCnt.Set(0)
+		'Get the ship via code
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtShipVia.RowCount--,1)
+			f.Intrinsic.Control.If(v.DataTable.dtShipVia(v.local.iCnt).SHIP_VIA!FieldValString,=,v.Screen.F_VendorUF!ddlShipVia.text)
+				v.Local.sShipViaCode.Set(v.DataTable.dtShipVia(v.Local.iCnt).SHIP_VIA_CODE!FieldValString)
+				f.Intrinsic.Control.ExitFor(v.Local.iCnt)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		'Since table is fixed width, must rpad to fit column width
+		f.Intrinsic.String.RPad(v.Local.sShipViaCode," ",3,v.Local.sShipViaCode)
+		
+		'Set the ISO status code
+		f.Intrinsic.Control.SelectCase(v.Screen.F_VendorUF!ddlISOStatus.text)
+			f.Intrinsic.Control.Case("ISO Certified")
+				v.Local.sISOStatusCode.Set("Y")
+			f.Intrinsic.Control.Case("In Process")
+				v.Local.sISOStatusCode.Set("I")
+			f.Intrinsic.Control.Case("No")
+				v.Local.sISOStatusCode.Set("N")
+			f.Intrinsic.Control.CaseElse
+				v.Local.sISOStatusCode.Set("")
+		f.Intrinsic.Control.EndSelect
+		
+		'If the ISO status is blank, date is padded with blanks: no value passed.
+		'If ISO status is "Y", we send the code and the date through
+		'Else, we send 0's for the date
+		f.Intrinsic.Control.If(v.Local.sISOStatusCode,=,"")
+			f.Intrinsic.String.LPad(v.Local.sISOStatusCode," ",30,v.Local.sISOStatusCode)
+			v.Local.sISODateMonthDay.Set("    ")
+			v.Local.sISODateYear.Set("    ")
+		f.Intrinsic.Control.Elseif(v.Local.sISOStatusCode,=,"Y")
+			'Clean up the ISO Date (entered as mmddyy)
+			'Year must be in 2000's if vendor is ISO compliant
+			
+			v.Local.sISODatePlaceHolder.Set(v.screen.F_VendorUF!txtISODate.text)
+			f.Intrinsic.String.Replace(v.Local.sISODatePlaceHolder,"/","",v.Local.sISODatePlaceHolder)
+			f.Intrinsic.String.Build("20{0}",v.Local.sISODatePlaceHolder.right2,v.Local.sISODateYear)
+			f.Intrinsic.String.Left(v.Local.sISODatePlaceHolder,4,v.Local.sISODateMonthDay)		
+			
+			'ISO code and year built to one string that is padded left @ 30 chars
+			f.Intrinsic.String.Build("                         {0}{1}",v.Local.sISOStatusCode,v.Local.sISODateYear,v.Local.sISOStatusCode)
+			'f.Intrinsic.String.LPad(v.Local.sISOStatusCode," ",30,v.Local.sISOStatusCode)
+		f.Intrinsic.Control.Else
+			v.Local.sISODateMonthDay.Set("0000")
+			v.Local.sISODateYear.Set("0000")
+		f.Intrinsic.Control.EndIf
+		
+		'Save vendor's data to vendor master
+		f.Intrinsic.String.Build("update vendor_master set name_vendor='{0}', address1='{1}', address2='{2}', city='{3}', state='{4}', code_zip='{5}', country='{6}', county='{7}', attention='{8}', buyer='{10}' where vendor='{9}' and REC = '1';",v.Screen.F_VendorUF!txtName.text,v.Screen.F_VendorUF!txtAddress1.text,v.Screen.F_VendorUF!txtAddress2.text,v.Screen.F_VendorUF!txtCity.text,v.Screen.F_VendorUF!txtState.text,v.Screen.F_VendorUF!txtZip.text,v.Screen.F_VendorUF!txtCountry.text,v.Screen.F_VendorUF!txtCounty.text,v.Screen.F_VendorUF!txtAttention.text,V.Local.sVendor.Trim,v.Local.sBuyerCode(0),v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'Save vendor Critical Supplier Boolean
+		F.Intrinsic.Control.If(V.Screen.F_VendorUF!chkCriticalSupplier.Value,=,1)
+			V.Local.sVendorCritical.Set("Y")
+		F.Intrinsic.Control.Else
+			V.Local.sVendorCritical.Set("N")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.String.Build("update VENDOR_ADDL Set CRITICAL_SUPPL = '{0}' where Vendor = '{1}' and REC = '3'",V.Local.sVendorCritical,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'Save external ID to vendor master
+		f.Intrinsic.String.Build("update vendor_master set code_sort='{0}' where vendor='{1}' and REC = '3';",v.Screen.F_VendorUF!txtExternalID.text,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'--------######### NOT WORKING ########----------------
+		f.Intrinsic.String.Build("update vendor_intl set address5_pay='{0}', default_currency='{1}', calc_pst='{2}' where vendor='{3}' and REC = '3';",v.Local.sISOStatusCode,v.Local.sISODateMonthDay.left3,v.Local.sISODateMonthDay.right1,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'--------######### NOT WORKING ########----------------
+		f.Intrinsic.String.Build("update vendor_intl set address3='{0}', address4='{1}', address5='{2}' where vendor='{3}' and REC = '4';",v.Screen.F_VendorUF!txtAddress3.text,v.Screen.F_VendorUF!txtAddress4.text,v.Screen.F_VendorUF!txtAddress5.text,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'Save the vendor's phone and fax to vendor addl table
+		f.Intrinsic.String.Build("update vend_mstr_addl set buy_phone='{0}{1}{2}{3}', buy_fax='{4}{5}{6}{7}' where vend_no='{8}';",v.Screen.F_VendorUF!txtTelCountry.text,v.Screen.F_VendorUF!txtTelAreaCd.text,v.Screen.F_VendorUF!txtTelNum1.text,v.Screen.F_VendorUF!txtTelNum2.text,v.Screen.F_VendorUF!txtFaxCountry.text,v.Screen.F_VendorUF!txtFaxAreaCd.text,v.Screen.F_VendorUF!txtFaxNum1.text,v.Screen.F_VendorUF!txtFaxNum2.text,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'Save the ship via (vendor_pay_to)
+		f.Intrinsic.String.Build("update vendor_pay_to set ship_via='{0}' where vendor='{1}' and rec='2';",v.Local.sShipViaCode,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'------------------Save the ISO status and date---------------------
+		
+			
+		'Save the UF's to CRM UF values table: If the company already has an entry there, update the record.  If not, insert the record.
+		f.Intrinsic.String.Build("select compid from crm_uf_value where compid='{0}';",v.Screen.F_VendorUF!txtVendorID.text,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sRet)
+		f.ODBC.Connection!con.Close
+		
+		f.Intrinsic.Control.If(v.Local.sRet,=,"")
+			f.Intrinsic.String.Build("insert into crm_uf_value (type, compid, comptype) values (10,'{0}','10');",v.Screen.F_VendorUF!txtVendorID.text,v.Local.sSQL)
+			f.ODBC.Connection!con.opencompanyconnection
+				f.ODBC.Connection!con.execute(v.Local.sSQL)
+			f.ODBC.Connection!con.Close
+		f.Intrinsic.Control.EndIf
+		
+		v.Local.iCnt.Set(0)
+		f.Data.DataTable.acceptchanges("dtUFs1")
+		F.Intrinsic.Control.For(v.local.iCnt,0,V.DataTable.dtUFs1.RowCount--,1)
+			f.Intrinsic.String.Build("update crm_uf_value set UF{0}='{1}' where compid='{2}';",v.DataTable.dtUFs1(v.Local.iCnt).UF_No!FieldValTrim,v.DataTable.dtUFs1(v.Local.iCnt).UserValue!FieldValTrim,v.Screen.F_VendorUF!txtVendorID.text,v.Local.sSQL)
+			f.ODBC.Connection!con.opencompanyconnection
+				f.ODBC.Connection!con.execute(v.Local.sSQL)
+			f.ODBC.Connection!con.Close
+		F.Intrinsic.Control.Next(v.local.iCnt)
+		
+		v.Local.iCnt.Set(0)
+		f.Data.DataTable.acceptchanges("dtUFs2")
+		F.Intrinsic.Control.For(v.local.iCnt,0,V.DataTable.dtUFs2.RowCount--,1)
+			f.Intrinsic.String.Build("update crm_uf_value set UF{0}='{1}' where compid='{2}';",v.DataTable.dtUFs2(v.Local.iCnt).UF_No!FieldValTrim,v.DataTable.dtUFs2(v.Local.iCnt).UserValue!FieldValTrim,v.Screen.F_VendorUF!txtVendorID.text,v.Local.sSQL)
+			f.ODBC.Connection!con.opencompanyconnection
+				f.ODBC.Connection!con.execute(v.Local.sSQL)
+			f.ODBC.Connection!con.Close
+		F.Intrinsic.Control.Next(v.local.iCnt)
+				
+		f.Intrinsic.UI.Msgbox("Vendor data saved successfully")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.GsGcVendorUF1_RowCellClick.Start
+	v.Local.sUFIndex.Declare(string)
+	v.Local.sSQL.Declare(string)
+	v.Local.sRet.Declare(string)
+	
+	'If the cell clicked is column "List", look up the values that can be selected for that UF index
+	f.Intrinsic.Control.Try
+		f.Intrinsic.Control.If(v.Args.column,=,"List")
+			v.Local.sUFIndex.Set(v.DataTable.dtUFs1(v.Args.rowindex).UF_No!FieldValTrim)
+			f.Intrinsic.String.Build("select UF_VALUE from CRM_UF_DEFAULT WHERE UF_NO='{0}';",V.Local.sUFIndex,V.Local.sSQL)
+			f.ODBC.Connection!con.opencompanyconnection
+				f.Intrinsic.UI.Browser("Select a value","con",v.Local.sSQL,"Val","250",v.Local.sRet)
+			f.ODBC.Connection!con.Close
+			f.Intrinsic.Control.If(v.local.sRet,!=,"***CANCEL***")
+				F.Intrinsic.String.Split(V.LOCAL.sRet,"*!*",V.LOCAL.sRet)
+				F.Data.DataTable.SetValue("dtUFs1",V.Args.ROWINDEX,"UserValue",v.local.sRet(0))
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GsGcVendorUF1_RowCellClick.End
+
+Program.Sub.ddlISOStatus_Change.Start
+	f.Intrinsic.Control.Try
+		'If status is not "ISO Certified", clear out the date and disable the field.
+		f.Intrinsic.Control.If(v.Screen.F_VendorUF!ddlISOStatus.text,=,"ISO Certified")
+			gui.F_VendorUF.txtISODate.Enabled(True)
+		f.Intrinsic.Control.Else
+			gui.F_VendorUF.txtISODate.Enabled(False)
+			gui.F_VendorUF.txtISODate.Text("")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.ddlISOStatus_Change.End
+
+Program.Sub.ddlISOStatus_LostFocus.Start
+	f.Intrinsic.Control.Try
+		'If status is not "ISO Certified", clear out the date and disable the field.
+		f.Intrinsic.Control.If(v.Screen.F_VendorUF!ddlISOStatus.text,=,"ISO Certified")
+			gui.F_VendorUF.txtISODate.Enabled(True)
+		f.Intrinsic.Control.Else
+			gui.F_VendorUF.txtISODate.Enabled(False)
+			gui.F_VendorUF.txtISODate.Text("")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.ddlISOStatus_LostFocus.End
+
+'--------DATA MOVEMENT----------
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5646_VendorExtraFields.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.GetVendorData.Start
+	f.Intrinsic.Control.Try
+		v.Local.sSQL.Declare(string)
+		v.local.sPhone.Declare(string)
+		v.Local.sDBPhoneNum.Declare(string)
+		v.Local.iPhoneLen.Declare(long)
+		v.Local.iCnt.Declare(long,0)
+		v.Local.sISOCode.Declare(string)
+		v.Local.sISODate.Declare(string)
+		v.Local.sISODatePlaceHolder.Declare(string)
+		V.Local.sExtID.Declare(string)
+		V.Local.sRet.Declare
+		
+		
+		'Get vendor Buy From data
+		f.Intrinsic.String.Build("select a.name_vendor, a.address1, a.address2, a.address3, a.address4, a.address5, a.city, a.state, a.code_zip, a.country, a.county, a.attention, b.buy_phone, b.buy_fax, c.uf1, c.uf2, c.uf3, c.uf4, c.uf5, c.uf6, c.uf7, c.uf8, c.uf9, c.uf10, c.uf11, c.uf12, c.uf13, c.uf14, c.uf15, c.uf16, a.buyer, a.code_sort from v_vendor_master3 a inner join v_vend_mstr_addl b on a.vendor=b.vend_no left join crm_uf_value c on a.vendor=c.compid where a.vendor='{0}';", v.Args.VendorNo,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Data.DataTable.CreateFromSQL("dtAll", "con", v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'Get vendor external ID
+		f.Intrinsic.String.Build("select code_sort from vendor_master where vendor='{0}' and rec='3';", v.Args.VendorNo,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sExtID)
+		f.ODBC.Connection!con.Close
+		
+		'Get vendor ISO status and date
+		f.Intrinsic.String.Build("select ltrim(address5_pay) as address5_pay, default_currency, calc_pst from vendor_intl where vendor='{0}' and rec='3';", v.Args.VendorNo,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Data.DataTable.CreateFromSQL("dtISO", "con", v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		'f.Intrinsic.String.Build("update vendor_pay_to set ship_via='{0}' where vendor='{1}' and rec='2';",v.Local.sShipViaCode,V.Local.sVendor.Trim,v.Local.sSQL)
+		f.Intrinsic.String.Build("select ltrim(rtrim(ship_via)) as ship_via from v_vendor_pay_to where vendor='{0}';", v.Args.VendorNo,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Data.DataTable.CreateFromSQL("dtShipViaVend", "con", v.Local.sSQL)
+		f.ODBC.Connection!con.Close
+		
+		F.Intrinsic.String.Build("select Rtrim(CRITICAL_SUPPL) as Critical_sup from V_Vendor_ADDL Where Vendor = '{0}'",v.Args.VendorNo,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+				F.Intrinsic.String.Left(V.Local.sRet,1,V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet.UCase,=,"Y")
+					Gui.F_VendorUF.chkCriticalSupplier.Value(1)
+				F.Intrinsic.Control.Else
+					Gui.F_VendorUF.chkCriticalSupplier.Value(0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.Close
+		
+		f.Intrinsic.Control.If(v.DataTable.dtAll.RowCount,>,0)
+			gui.F_VendorUF.txtName.Text(v.DataTable.dtAll(0).Name_Vendor!FieldValTrim)
+			gui.F_VendorUF.txtAddress1.Text(v.DataTable.dtAll(0).Address1!FieldValTrim)
+			gui.F_VendorUF.txtAddress2.Text(v.DataTable.dtAll(0).Address2!FieldValTrim)
+			gui.F_VendorUF.txtAddress3.Text(v.DataTable.dtAll(0).Address3!FieldValTrim)
+			gui.F_VendorUF.txtAddress4.Text(v.DataTable.dtAll(0).Address4!FieldValTrim)
+			gui.F_VendorUF.txtAddress5.Text(v.DataTable.dtAll(0).Address5!FieldValTrim)
+			gui.F_VendorUF.txtCity.Text(v.DataTable.dtAll(0).City!FieldValTrim)
+			gui.F_VendorUF.txtState.Text(v.DataTable.dtAll(0).State!FieldValTrim)
+			gui.F_VendorUF.txtZip.Text(v.DataTable.dtAll(0).Code_Zip!FieldValTrim)
+			gui.F_VendorUF.txtCountry.Text(v.DataTable.dtAll(0).Country!FieldValTrim)
+			gui.F_VendorUF.txtCounty.Text(v.DataTable.dtAll(0).County!FieldValTrim)
+			gui.F_VendorUF.txtAttention.Text(v.DataTable.dtAll(0).Attention!FieldValTrim)
+			gui.F_VendorUF.txtExternalID.Text(v.Local.sExtID)
+			
+			'Set the phone number
+			f.Intrinsic.String.Right(v.DataTable.dtAll(0).Buy_Phone!FieldValTrim,4,v.Local.sPhone)
+			gui.F_VendorUF.txtTelNum2.text(v.Local.sPhone)
+			f.Intrinsic.String.Len(v.DataTable.dtAll(0).Buy_Phone!FieldValTrim,v.Local.iPhoneLen)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,4,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.DataTable.dtAll(0).Buy_Phone!FieldValTrim,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,3,v.Local.sPhone)
+			gui.F_VendorUF.txtTelNum1.text(v.Local.sPhone)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,3,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.Local.sDBPhoneNum,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,3,v.Local.sPhone)
+			gui.F_VendorUF.txtTelAreaCd.text(v.Local.sPhone)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,3,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.Local.sDBPhoneNum,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,1,v.Local.sPhone)
+			gui.F_VendorUF.txtTelCountry.text(v.Local.sPhone)
+			
+			'Set the fax number
+			f.Intrinsic.String.Right(v.DataTable.dtAll(0).buy_fax!FieldValTrim,4,v.Local.sPhone)
+			gui.F_VendorUF.txtFaxNum2.text(v.Local.sPhone)
+			f.Intrinsic.String.Len(v.DataTable.dtAll(0).buy_fax!FieldValTrim,v.Local.iPhoneLen)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,4,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.DataTable.dtAll(0).buy_fax!FieldValTrim,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,3,v.Local.sPhone)
+			gui.F_VendorUF.txtFaxNum1.text(v.Local.sPhone)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,3,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.Local.sDBPhoneNum,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,3,v.Local.sPhone)
+			gui.F_VendorUF.txtFaxAreaCd.text(v.Local.sPhone)
+			f.Intrinsic.Math.Sub(v.Local.iPhoneLen,3,v.Local.iPhoneLen)
+			f.Intrinsic.String.Left(v.Local.sDBPhoneNum,v.Local.iPhoneLen,v.Local.sDBPhoneNum)
+			f.Intrinsic.String.Right(v.Local.sDBPhoneNum,1,v.Local.sPhone)
+			gui.F_VendorUF.txtFaxCountry.text(v.Local.sPhone)
+			
+			'Set the user fields
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtUFs1.RowCount--,1)
+				f.Data.DataTable.SetValue("dtUFs1",v.Local.iCnt,"UserValue",v.DataTable.dtAll(0).UF[v.DataTable.dtUFs1(v.Local.iCnt).uf_no!FieldValTrim]!FieldValTrim)
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			V.Local.iCnt.Set(0)
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtUFs2.RowCount--,1)
+				f.Data.DataTable.SetValue("dtUFs2",v.Local.iCnt,"UserValue",v.DataTable.dtAll(0).UF[v.DataTable.dtUFs2(v.Local.iCnt).uf_no!FieldValTrim]!FieldValTrim)
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			
+			'Find the buyer in the buyer DT
+			v.Local.iCnt.Set(0)
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtBuyer.RowCount--,1)
+				f.Intrinsic.Control.If(v.DataTable.dtBuyer(v.Local.iCnt).Buyer_Code!FieldValtrim,=,v.DataTable.dtAll(0).Buyer!FieldValTrim)
+					gui.F_VendorUF.ddlBuyer.text(v.DataTable.dtBuyer(v.Local.iCnt).Buyer!FieldValtrim)
+					'f.Intrinsic.Control.ExitFor(v.local.iCnt)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+		F.Intrinsic.Control.Else
+			gui.F_VendorUF.txtName.Text("")
+			gui.F_VendorUF.txtAddress1.Text("")
+			gui.F_VendorUF.txtAddress2.Text("")
+			gui.F_VendorUF.txtAddress3.Text("")
+			gui.F_VendorUF.txtAddress4.Text("")
+			gui.F_VendorUF.txtAddress5.Text("")
+			gui.F_VendorUF.txtCity.Text("")
+			gui.F_VendorUF.txtState.Text("")
+			gui.F_VendorUF.txtZip.Text("")
+			gui.F_VendorUF.txtCountry.Text("")
+			gui.F_VendorUF.txtCounty.Text("")
+			gui.F_VendorUF.txtAttention.Text("")
+			gui.F_VendorUF.txtTelNum2.text("")
+			gui.F_VendorUF.txtTelNum1.text("")
+			gui.F_VendorUF.txtTelAreaCd.text("")
+			gui.F_VendorUF.txtTelCountry.text("")
+			gui.F_VendorUF.txtFaxNum2.text("")
+			gui.F_VendorUF.txtFaxNum1.text("")
+			gui.F_VendorUF.txtFaxAreaCd.text("")
+			gui.F_VendorUF.txtFaxCountry.text("")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtUFs1.RowCount--,1)
+				f.Data.DataTable.SetValue("dtUFs1",v.Local.iCnt,"UserValue","")
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			V.Local.iCnt.Set(0)
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtUFs2.RowCount--,1)
+				f.Data.DataTable.SetValue("dtUFs2",v.Local.iCnt,"UserValue","")
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			gui.F_VendorUF.ddlBuyer.text("")
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.DataTable.dtISO.RowCount,>,0)
+			'Break apart the fields to piece together the ISO status and date
+			f.Intrinsic.Control.If(v.DataTable.dtISO(0).Address5_Pay!FieldValTrim,!=,"")
+				f.Intrinsic.String.Left(v.DataTable.dtISO(0).Address5_Pay!FieldValTrim,1,v.Local.sISOCode)
+				f.Intrinsic.String.Right(v.DataTable.dtISO(0).Address5_Pay!FieldValTrim,4,v.Local.sISODate)
+				
+				f.Intrinsic.Control.If(v.Local.sISODate,!=,"0000")
+					f.Intrinsic.String.build("{0}{1}",v.DataTable.dtISO(0).Default_currency!FieldValTrim,v.DataTable.dtISO(0).Calc_pst!FieldValTrim,v.Local.sISODatePlaceHolder)
+					f.Intrinsic.String.Build("{0}/{1}/{2}",v.Local.sISODatePlaceHolder.left2,v.Local.sISODatePlaceHolder.right2,v.Local.sISODate.right2,v.Local.sISODate)
+					gui.F_VendorUF.txtISODate.Text(v.Local.sISODate)
+				f.Intrinsic.Control.Else
+					gui.F_VendorUF.txtISODate.Text("")
+				f.Intrinsic.Control.EndIf
+				
+				f.Intrinsic.Control.SelectCase(v.Local.sISOCode)
+					f.Intrinsic.Control.Case("Y")
+						gui.F_VendorUF.ddlISOStatus.Text("ISO Certified")
+					f.Intrinsic.Control.Case("I")
+						gui.F_VendorUF.ddlISOStatus.Text("In Process")
+					f.Intrinsic.Control.Case("N")
+						gui.F_VendorUF.ddlISOStatus.Text("No")
+					f.Intrinsic.Control.CaseElse
+						gui.F_VendorUF.ddlISOStatus.Text("")
+				f.Intrinsic.Control.EndSelect
+			f.Intrinsic.Control.else
+				gui.F_VendorUF.txtISODate.text("")
+				gui.F_VendorUF.ddlISOStatus.Text("")
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Else
+			gui.F_VendorUF.txtISODate.text("")
+			gui.F_VendorUF.ddlISOStatus.Text("")
+		f.Intrinsic.Control.EndIf
+		
+		'Find the ship via code in the dtShipVia
+		v.Local.iCnt.Set(0)
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtShipVia.RowCount--,1)
+			f.Intrinsic.Control.If(v.DataTable.dtShipVia(v.Local.iCnt).SHIP_VIA_CODE!FieldValString,=,v.DataTable.dtShipViaVend(0).Ship_Via!FieldValString)
+				gui.F_VendorUF.ddlShipVia.text(v.DataTable.dtShipVia(v.Local.iCnt).SHIP_VIA!FieldValString)
+				f.Intrinsic.Control.ExitFor(v.local.iCnt)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+'		f.Data.DataTable.Close("dtISO")
+'		f.Data.DataTable.Close("dtShipViaVend")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GetVendorData.End
+
+Program.Sub.GetUserFields.Start
+	f.Intrinsic.Control.Try
+		v.Local.iColCnt.Declare(long)
+		
+		'GV1 holds user fields that only accept values from a dropdown list.  GV2 holds values that can be manually entered.  
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Data.DataTable.CreateFromSQL("dtUFs1","con","select uf_title as UserField, '' as UserValue, uf_no, '0' as List from CRM_UF_TITLE where UF_Title !='' and uf_no <= 8;",True)
+			f.Data.DataTable.CreateFromSQL("dtUFs2","con","select uf_title as UserField, '' as UserValue, uf_no from CRM_UF_TITLE where UF_Title !='' and uf_no > 8;",True)
+		f.ODBC.Connection!con.Close
+		
+		gui.F_VendorUF.GsGcVendorUF1.AddGridviewFromDatatable("gvUFs1","dtUFs1")
+		gui.F_VendorUF.GsGcVendorUF1.MainView("gvUFs1")
+		
+		'gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","MaxLength",30)
+		
+		gui.F_VendorUF.GsGcVendorUF1.SetGridviewProperty("gvUFs1","ReadOnly",True)
+		gui.F_VendorUF.GsGcVendorUF1.SetGridviewProperty("gvUFs1","Editable",False)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserField","HeaderFontBold",True)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","HeaderFontBold",True)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UF_No","HeaderFontBold",True)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","List","HeaderFontBold",True)
+		
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserField","AllowEdit",False)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserField","ReadOnly",True)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","AllowEdit",False)
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","ReadOnly",True)
+		
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserField","HeaderBackColor","Green")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserField","HeaderForeColor","White")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","HeaderBackColor","Green")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","UserValue","HeaderForeColor","White")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","List","HeaderBackColor","Green")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","List","HeaderForeColor","White")
+		
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","uf_no","Visible",False)
+
+		gui.F_VendorUF.GsGcVendorUF1.ColumnEdit("gvUFs1","List","EditorButton","0")
+		gui.F_VendorUF.GsGcVendorUF1.SetColumnProperty("gvUFs1","List","Icon","BROWSE")
+		
+		gui.F_VendorUF.GsGcVendorUF2.AddGridviewFromDatatable("gvUFs2","dtUFs2")
+		gui.F_VendorUF.GsGcVendorUF2.MainView("gvUFs2")
+		
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","MaxLength",30)
+		
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserField","HeaderFontBold",True)
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","HeaderFontBold",True)
+		
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserField","AllowEdit",False)
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserField","ReadOnly",True)
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","AllowEdit",True)
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","ReadOnly",False)
+		
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserField","HeaderBackColor","Green")
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserField","HeaderForeColor","White")
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","HeaderBackColor","Green")
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","UserValue","HeaderForeColor","White")
+		
+		gui.F_VendorUF.GsGcVendorUF2.SetColumnProperty("gvUFs2","uf_no","Visible",False)
+		
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GetUserFields.End
+
+Program.Sub.GetDropdownValues.Start
+	f.Intrinsic.Control.Try
+		V.local.sSQL.Declare(string)
+		v.Local.iCnt.Declare(long,0)
+		
+		'ISO Status
+		GUI.F_VendorUF.ddlISOStatus.AddItem("")
+		GUI.F_VendorUF.ddlISOStatus.AddItem("ISO Certified")
+		GUI.F_VendorUF.ddlISOStatus.AddItem("In Process")
+		GUI.F_VendorUF.ddlISOStatus.AddItem("No")
+		
+		f.ODBC.Connection!con.opencompanyconnection
+			'Buyer
+			gui.F_VendorUF.ddlBuyer.AddItem("")
+			f.Data.DataTable.CreateFromSQL("dtBuyer","con","select BUYER_CODE, BUYER FROM V_BUYERs;",True)
+			'Ship Via
+			gui.F_VendorUF.ddlShipVia.AddItem("")
+			f.Data.DataTable.CreateFromSQL("dtShipVia","con","select ltrim(rtrim(SHIP_VIA_CODE)) as ship_via_code, ltrim(rtrim(SHIP_VIA)) as ship_via, ship_via_code as ship_via_code_orig FROM V_AP_SHIP_VIA;",True)
+		f.ODBC.Connection!con.Close
+		
+		f.Intrinsic.Control.If(v.DataTable.dtBuyer.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtBuyer.RowCount--,1)
+				gui.F_VendorUF.ddlBuyer.AddItem(v.DataTable.dtBuyer(v.Local.iCnt).BUYER!FieldValTrim)
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Intrinsic.Control.EndIf
+		
+		v.Local.iCnt.Set(0)
+		
+		f.Intrinsic.Control.If(v.DataTable.dtShipVia.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtShipVia.RowCount--,1)
+				gui.F_VendorUF.ddlShipVia.AddItem(v.DataTable.dtShipVia(v.Local.iCnt).SHIP_VIA!FieldValString)
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GetDropdownValues.End
